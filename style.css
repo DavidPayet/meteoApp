@@ -1,0 +1,107 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 300;
+  color: #fff;
+  height: 100vh;
+  background-image: linear-gradient(to right top, #051937, #031b40, #021e4a, #031f53, #07215c);
+}
+
+.card {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 45%);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: #1119289a;
+  border-radius: 12px;
+  border: 1px solid #ffffff20;
+  padding-top: 20px;
+  letter-spacing: 1.5px;
+  box-shadow: 0px 0px 16px -8px #fff;
+
+}
+
+.title,
+.weather-description,
+.temperature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.title,
+.temperature {
+  font-size: clamp(1rem, 10vw, 58px);
+}
+
+.meteo-icon {
+  width: 150px;
+  display: block;
+  margin: auto;
+}
+
+.weather-description {
+  font-size: clamp(1rem, 10vw, 38px);
+  margin-top: 0;
+}
+
+.temperature {
+  padding-top: 40px;
+}
+
+.ticker-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.ticker {
+  width: 100%;
+  color: #fff;
+  padding: 10px 0;
+  margin: 40px 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.ticker-content {
+  display: flex;
+  animation: tickerScroll 20s linear infinite;
+}
+
+.ticker-content span {
+  margin: auto;
+}
+
+@keyframes tickerScroll {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+footer {
+  width: 100vw;
+  margin: 40px auto;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.logo {
+  width: 30px;
+  margin: 0 5px -14px;
+}
