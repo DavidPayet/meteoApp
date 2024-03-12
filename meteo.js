@@ -7,11 +7,11 @@ const tempMin = document.querySelector('.ticker-content :nth-child(2)')
 const tempMax = document.querySelector('.ticker-content :nth-child(3)')
 const pressure = document.querySelector('.ticker-content :nth-child(4)')
 const humidity = document.querySelector('.ticker-content :nth-child(5)')
-
+const APIKEY = process.env.API_KEY
 
 const fetchWeather = (city) => {
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&exclude=minutely&units=metric&lang=fr&appid=${process.env.APIKEY}`
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&exclude=minutely&units=metric&lang=fr&appid=${APIKEY}`
   )
     .then((res) => res.json())
     .then((data) => {
