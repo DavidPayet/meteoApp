@@ -1,3 +1,5 @@
+import API_KEY from "./apikey"
+
 const title = document.querySelector('.title')
 const weatherDescription = document.querySelector('.weather-description')
 const temperature = document.querySelector('.temperature')
@@ -7,7 +9,7 @@ const tempMin = document.querySelector('.ticker-content :nth-child(2)')
 const tempMax = document.querySelector('.ticker-content :nth-child(3)')
 const pressure = document.querySelector('.ticker-content :nth-child(4)')
 const humidity = document.querySelector('.ticker-content :nth-child(5)')
-const APIKEY = process.env.API_KEY
+const APIKEY = API_KEY
 
 const fetchWeather = (city) => {
   fetch(
