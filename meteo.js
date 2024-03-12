@@ -1,4 +1,4 @@
-import { API_KEY } from './apikey'
+import API_KEY from "./apikey"
 
 const title = document.querySelector('.title')
 const weatherDescription = document.querySelector('.weather-description')
@@ -36,7 +36,7 @@ const fetchWeather = (city) => {
     })
 }
 
-const fetchCity = () => {
+const fetchCity= () => {
   fetch('/conf.json')
     .then((res) => res.json())
     .then((data) => {
