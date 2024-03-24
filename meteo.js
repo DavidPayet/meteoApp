@@ -8,6 +8,9 @@ const tempMax = document.querySelector('.ticker-content :nth-child(3)')
 const pressure = document.querySelector('.ticker-content :nth-child(4)')
 const humidity = document.querySelector('.ticker-content :nth-child(5)')
 const APIKEY = API_KEY
+const searchbarContainer = document.querySelector('.searchbar-container')
+const searchbarInput = document.querySelector('.searchbar-container input')
+const searchbarBtn = document.querySelector('.searchbar-container button')
 
 const fetchWeather = (city) => {
   fetch(
@@ -42,12 +45,36 @@ const fetchCity = () => {
       fetchWeather(city)
     })
 }
+fetchCity()
 
-const updateWeatherHourly = () => {
-  fetchCity()
+const updateWeatherHourly = (city) => {
+  fetchWeather(city)
 
   setInterval(() => {
-    fetchCity()
+    fetchWeather(city)
   }, 1000 * 60 * 60)
 }
-updateWeatherHourly()
+
+searchbarInput.addEventListener('focus', () => {
+  searchbarContainer.classList.add('higthlight-searchbar')
+})
+searchbarInput.addEventListener('blur', () => {
+  searchbarContainer.classList.remove('higthlight-searchbar')
+})
+
+searchbarBtn.addEventListener('click', () => {
+  const city = searchbarInput.value.trim()
+
+  if (city !== '') {
+    updateWeatherHourly(city)
+  }
+})
+
+searchbarInput.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter') {
+    const city = searchbarInput.value.trim()
+    if (city !== '') {
+      updateWeatherHourly(city)
+    }
+  }
+})

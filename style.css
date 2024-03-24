@@ -14,20 +14,68 @@ body {
   background-image: linear-gradient(to right top, #051937, #031b40, #021e4a, #031f53, #07215c);
 }
 
+.searchbar-container,
+.card {
+  background-color: #1119289a;
+  border-radius: 12px;
+  border: 1px solid #ffffff20;
+  letter-spacing: 1.5px;
+  box-shadow: 0px 0px 16px -8px #fff;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+}
+
+.searchbar-container {
+  width: max-content;
+  text-align: center;
+  position: relative;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.searchbar-container input {
+  color: #fff;
+  letter-spacing: 2px;
+  width: 250px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  background-color: transparent;
+  font-size: 16px;
+  border: none;
+  font-size: 18px;
+  outline: none;
+  caret-color: #fff;
+}
+
+.higthlight-searchbar {
+  box-shadow: 0px 0px 26px -8px #fff;
+}
+
+.searchbar-container button {
+  border: none;
+  margin-right: 10px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.searchbar-container button i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  height: 40px;
+  color: #ffffffc6;
+}
+
 .card {
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: calc(100% - 45%);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: #1119289a;
-  border-radius: 12px;
-  border: 1px solid #ffffff20;
   padding-top: 20px;
-  letter-spacing: 1.5px;
-  box-shadow: 0px 0px 16px -8px #fff;
 }
 
 .title,
