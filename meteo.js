@@ -26,7 +26,7 @@ const fetchWeather = (city) => {
 
       let currentHour = new Date().getHours()
 
-      if (currentHour >= 6 && currentHour < 18) {
+      if (currentHour >= 6 && currentHour < 21) {
         imgIcone.src = `assets/day/${data.weather[0].icon}.svg`
       } else {
         imgIcone.src = `assets/night/${data.weather[0].icon}.svg`
